@@ -1,0 +1,195 @@
+/* Reset some default styles for list and anchor tags */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Style the header */
+header {
+    background-color: #007BFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Style the logo */
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #fff;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    margin: 2px 0;
+    border-radius: 50px;
+    transition: transform 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+
+/* Change link color on hover */
+nav a:hover {
+    background-color: #0056b3;
+}
+
+.subjects {
+    font-family: "Lato", sans-serif;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+.subjects h2{
+    font-size: 24px;
+    color: #444746;
+    margin-bottom: 20px;
+}
+
+/* Style the subject boxes */
+.subject-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.subject-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px 0;
+    margin: 10px 0;
+    border-radius: 16px;
+    flex-basis: calc(50% - 20px);
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.subject-box:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive layout adjustments */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 50%;
+        flex-direction: column;
+        background-color: #007BFF;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        transform: translateY(-100%); /* Initially hide the navigation above the screen */
+    transition: transform 0.3s;
+    }
+
+    .nav-links li{
+        margin: 15px 0px;
+    }
+
+    nav a {
+        color: #fff;
+        font-weight: 500;
+        border-radius: 0;
+        transition: background-color 0.5s;
+    }
+
+    nav a:hover{
+        background-color: #007BFF;
+    }
+
+    .nav-links.show {
+        display: flex;
+        transform: translateY(0); /* Slide in the navigation from the top */
+    }
+
+    .bar.active:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .bar.active:nth-child(2) {
+        opacity: 0;
+    }
+
+    .bar.active:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .subject-grid {
+        flex-direction: column;
+    }
+
+    .subject-box {
+        flex-basis: 100%;
+    }
+}
