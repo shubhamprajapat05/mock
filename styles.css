@@ -110,7 +110,7 @@ nav a:hover {
     justify-content: space-between;
 }
 
-.subject-box {
+.box {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px 0;
@@ -125,7 +125,7 @@ nav a:hover {
     transition: box-shadow 0.3s;
 }
 
-.subject-box:hover {
+.box:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -189,7 +189,7 @@ nav a:hover {
         flex-direction: column;
     }
 
-    .subject-box {
+    .box {
         flex-basis: 100%;
     }
 }
